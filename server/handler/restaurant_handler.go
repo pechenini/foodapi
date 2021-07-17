@@ -9,10 +9,10 @@ import (
 )
 
 type RestaurantHandler struct {
-	db model.DB
+	db *model.DB
 }
 
-func NewRestaurantHandler(db model.DB) *RestaurantHandler {
+func NewRestaurantHandler(db *model.DB) *RestaurantHandler {
 	return &RestaurantHandler{db: db}
 }
 

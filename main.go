@@ -5,12 +5,14 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/pechenini/foodapi/model"
 	"github.com/pechenini/foodapi/server/handler"
+	"github.com/pechenini/foodapi/service/regulation"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	_ "github.com/pechenini/foodapi/docs"
+	"time"
 )
 
 func main() {
@@ -38,7 +40,10 @@ func main() {
 		panic(err)
 	}
 
-	restHandler := handler.NewRestaurantHandler(db)
+	priceRegulator := regulation.NewPriceRegulator(1 * time.Minute)
+	go priceRegulator.Regulate(&db)
+
+	restHandler := handler.NewRestaurantHandler(&db)
 
 	r.GET("/restaurants", restHandler.GetRestaurants)
 
