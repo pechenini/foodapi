@@ -1,0 +1,36 @@
+restaurants:
+  - name: "Pizza Club"
+    id: 1
+    menu:
+      - name: "Pizza Pepperoni with tomatoes"
+        price: 4.99
+        type: "pizza"
+        ingredients: ["Mozarella", "Peperoni", "Tomatoes", "BBQ sauce"]
+
+      - name: "Pizza Texas"
+        price: 7.99
+        type: "pizza"
+        ingredients: ["Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce"]
+
+      - name: "Pizza Hawaiian"
+        price: 6.99
+        type: "pizza"
+        ingredients: ["Chicken", "Pineapple", "Mozarella"]
+
+  - name: "Burger Club"
+    id: 2
+    menu:
+      - name: "Original burger"
+        price: 3.99
+        type: "burger"
+        ingredients: ["Cheese", "Caramelized onions", "Tomatoes", "Original sauce"]
+
+      - name: "Crispy Chicken burger"
+        price: 4.95
+        type: "burger"
+        ingredients: ["Chicken", "Tomatoes", "Mushrooms", "Onion", "BBQ sauce"]
+
+      - name: "Bacon Cheese Burger"
+        price: 6.90
+        type: "burger"
+        ingredients: ["Cheese cheddar", "Bacon", "Original sauce", "Onion rings"]

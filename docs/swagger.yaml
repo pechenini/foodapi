@@ -1,0 +1,77 @@
+definitions:
+  model.Menu:
+    properties:
+      ingredients:
+        items:
+          type: string
+        type: array
+      name:
+        type: string
+      price:
+        type: number
+      type:
+        type: string
+    type: object
+  response.Error:
+    properties:
+      error:
+        type: string
+    type: object
+  response.RestaurantCollectionResponse:
+    properties:
+      restaurants:
+        items:
+          $ref: '#/definitions/response.RestaurantResponse'
+        type: array
+    type: object
+  response.RestaurantResponse:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /restaurants:
+    get:
+      description: Get restaurants
+      operationId: get-restaurants
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.RestaurantCollectionResponse'
+      summary: Get restaurants
+      tags:
+      - Restaurants Actions
+  /restaurants/{id}/menu:
+    get:
+      description: Get menu by restaurant id
+      operationId: get-restaurant-menu
+      parameters:
+      - description: Restaurant ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Menu'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Error'
+      summary: Get restaurant menu by restaurant id
+      tags:
+      - Restaurant Actions
+swagger: "2.0"
