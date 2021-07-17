@@ -69,10 +69,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/model.Menu"
-                            }
+                            "$ref": "#/definitions/response.MenuResponse"
                         }
                     },
                     "400": {
@@ -111,6 +108,17 @@ var doc = `{
             "properties": {
                 "error": {
                     "type": "string"
+                }
+            }
+        },
+        "response.MenuResponse": {
+            "type": "object",
+            "properties": {
+                "menu": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.Menu"
+                    }
                 }
             }
         },

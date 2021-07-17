@@ -42,7 +42,7 @@ func (handler *RestaurantHandler) GetRestaurants(ctx *gin.Context) {
 // @Tags Restaurant Actions
 // @Produce json
 // @Param id path int true "Restaurant ID"
-// @Success 200 {object} []model.Menu
+// @Success 200 {object} response.MenuResponse
 // @Failure 400 {object} response.Error
 // @Router /restaurants/{id}/menu [get]
 func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {

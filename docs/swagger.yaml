@@ -17,6 +17,13 @@ definitions:
       error:
         type: string
     type: object
+  response.MenuResponse:
+    properties:
+      menu:
+        items:
+          $ref: '#/definitions/model.Menu'
+        type: array
+    type: object
   response.RestaurantCollectionResponse:
     properties:
       restaurants:
@@ -64,9 +71,7 @@ paths:
         "200":
           description: OK
           schema:
-            items:
-              $ref: '#/definitions/model.Menu'
-            type: array
+            $ref: '#/definitions/response.MenuResponse'
         "400":
           description: Bad Request
           schema:
