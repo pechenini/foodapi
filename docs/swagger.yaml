@@ -40,6 +40,7 @@ definitions:
     type: object
 info:
   contact: {}
+  license: {}
 paths:
   /restaurants:
     get:

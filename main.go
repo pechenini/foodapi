@@ -3,15 +3,15 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	_ "github.com/pechenini/foodapi/docs"
 	"github.com/pechenini/foodapi/model"
 	"github.com/pechenini/foodapi/server/handler"
 	"github.com/pechenini/foodapi/service/regulation"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
-	_ "github.com/pechenini/foodapi/docs"
 	"time"
 )
 
