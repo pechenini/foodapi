@@ -35,7 +35,7 @@
                 "tags": [
                     "Restaurant Actions"
                 ],
-                "summary": "Get restaurant menu by restaurant id",
+                "summary": "Get restaurant menu position by restaurant id and position id",
                 "operationId": "get-restaurant-menu",
                 "parameters": [
                     {
@@ -61,12 +61,58 @@
                     }
                 }
             }
+        },
+        "/restaurants/{id}/menu/{position_id}": {
+            "get": {
+                "description": "Get menu position by restaurant id and position id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Restaurant Actions"
+                ],
+                "summary": "Get restaurant menu by restaurant id and position id",
+                "operationId": "get-restaurant-menu-position",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Restaurant ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Restaurant menu position ID",
+                        "name": "position_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Menu"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/response.Error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "model.Menu": {
             "type": "object",
             "properties": {
+                "id": {
+                    "type": "integer"
+                },
                 "image": {
                     "type": "string"
                 },

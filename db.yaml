@@ -4,18 +4,21 @@ restaurants:
     image: "https://play-lh.googleusercontent.com/qMewibe3u5Wvq3fBf3Ca3_QItjHCOKeGrOAzVXWxqzgRpMwxYlD5CA6M2M5L78SwNA"
     menu:
       - name: "Pizza Pepperoni with tomatoes"
+        id: 1
         price: 4.99
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/okean-1.jpg.webp"
         ingredients: [ "Mozarella", "Peperoni", "Tomatoes", "BBQ sauce" ]
 
       - name: "Pizza Texas"
+        id: 2
         price: 7.99
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/4-mjasa-1.jpg.webp"
         ingredients: [ "Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce" ]
 
       - name: "Pizza Hawaiian"
+        id: 3
         price: 6.99
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/rostbif-v-tunce-1.jpg.webp"
@@ -26,6 +29,7 @@ restaurants:
     image: "https://eda.ua/images/506509-195-195-burger_club_harkov.jpg"
     menu:
       - name: "Original burger"
+        id: 4
         price: 3.99
         type: "burger"
         image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/49e75c35-6fff-4a0f-8d6a-959cf4721c74_Medium_.jpg"
@@ -33,12 +37,14 @@ restaurants:
 
       - name: "Crispy Chicken burger"
         price: 4.95
+        id: 5
         type: "burger"
         image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/93bce037-709e-41a0-9beb-ab3670663b40_Medium_.jpg"
         ingredients: [ "Chicken", "Tomatoes", "Mushrooms", "Onion", "BBQ sauce" ]
 
       - name: "Bacon Cheese Burger"
         price: 6.90
+        id: 6
         type: "burger"
         image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/ba3a1ca2-2ec6-4cf4-a843-f7f0fc0f175a_Medium_.jpg"
         ingredients: [ "Cheese cheddar", "Bacon", "Original sauce", "Onion rings" ]
@@ -49,18 +55,21 @@ restaurants:
     menu:
       - name: "Pizza Ocean"
         price: 4.99
+        id: 7
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2019/03/kapricheza.jpg.webp"
         ingredients: [ "Mozarella", "Peperoni", "Tomatoes", "BBQ sauce" ]
 
       - name: "Pizza Florida"
         price: 7.99
+        id: 8
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2015/09/4-syra.jpg.webp"
         ingredients: [ "Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce" ]
 
       - name: "Pizza Italiano"
         price: 6.99
+        id: 9
         type: "pizza"
         image: "https://roll-club.kh.ua/wp-content/uploads/2014/08/ukrainskaja.jpg.webp"
         ingredients: [ "Chicken", "Pineapple", "Mozarella" ]
@@ -71,18 +80,21 @@ restaurants:
     menu:
       - name: "Philadelphia with salmon"
         price: 4.99
+        id: 10
         type: "sushi"
         image: "https://ninjasushi.com.ua/img/452.png"
         ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese" ]
 
       - name: "Unagi Philadelphia"
         price: 7.99
+        id: 11
         type: "sushi"
         image: "https://ninjasushi.com.ua/img/102-600x600.png"
         ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese", "Unagi sauce" ]
 
       - name: "Himawari"
         price: 6.99
+        id: 12
         type: "sushi"
         image: "https://roll-club.kh.ua/wp-content/uploads/2014/08/ukrainskaja.jpg.webp"
         ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese", "Unagi sauce", "Japanese tamago" ]

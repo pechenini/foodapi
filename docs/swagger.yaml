@@ -1,6 +1,8 @@
 definitions:
   model.Menu:
     properties:
+      id:
+        type: integer
       image:
         type: string
       ingredients:
@@ -81,7 +83,36 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.Error'
-      summary: Get restaurant menu by restaurant id
+      summary: Get restaurant menu position by restaurant id and position id
+      tags:
+      - Restaurant Actions
+  /restaurants/{id}/menu/{position_id}:
+    get:
+      description: Get menu position by restaurant id and position id
+      operationId: get-restaurant-menu-position
+      parameters:
+      - description: Restaurant ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Restaurant menu position ID
+        in: path
+        name: position_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Menu'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Error'
+      summary: Get restaurant menu by restaurant id and position id
       tags:
       - Restaurant Actions
 swagger: "2.0"

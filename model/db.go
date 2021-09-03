@@ -12,6 +12,7 @@ type Restaurants struct {
 }
 
 type Menu struct {
+	ID          int      `yaml:"id" json:"id"`
 	Name        string   `yaml:"name" json:"name"`
 	Price       float64  `yaml:"price" json:"price"`
 	Image       string   `yaml:"image" json:"image"`
