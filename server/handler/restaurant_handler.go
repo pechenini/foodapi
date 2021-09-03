@@ -47,7 +47,7 @@ func (handler *RestaurantHandler) GetRestaurants(ctx *gin.Context) {
 // @Success 200 {object} model.Menu
 // @Failure 400 {object} response.Error
 // @Router /restaurants/{id}/menu/{position_id} [get]
-func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
+func (handler *RestaurantHandler) GetRestaurantMenuPosition(ctx *gin.Context) {
 	restId, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, response.Error{
@@ -82,8 +82,8 @@ func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
 	return
 }
 
-// GetRestaurantMenuPosition godoc
-// @Summary Get restaurant menu position by restaurant id and position id
+// GetRestaurantMenu godoc
+// @Summary Get restaurant menu by restaurant id
 // @Description Get menu by restaurant id
 // @ID get-restaurant-menu
 // @Tags Restaurant Actions
@@ -92,7 +92,7 @@ func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
 // @Success 200 {object} response.MenuResponse
 // @Failure 400 {object} response.Error
 // @Router /restaurants/{id}/menu [get]
-func (handler *RestaurantHandler) GetRestaurantMenuPosition(ctx *gin.Context) {
+func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
 	var menuResponse response.MenuResponse
 	restIdString := ctx.Param("id")
 	restId, err := strconv.Atoi(restIdString)
