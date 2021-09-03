@@ -48,7 +48,7 @@ func main() {
 	r.GET("/restaurants", restHandler.GetRestaurants)
 
 	r.GET("/restaurants/:id/menu", restHandler.GetRestaurantMenu)
-	r.GET("/restaurants/:id/menu/:position_id", restHandler.GetRestaurantMenu)
+	r.GET("/restaurants/:id/menu/:position_id", restHandler.GetRestaurantMenuPosition)
 
 	url := ginSwagger.URL(os.Getenv("SWAGGER_ADDRESS")) // The url pointing to API definition
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))

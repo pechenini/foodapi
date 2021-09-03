@@ -36,7 +36,7 @@ func (handler *RestaurantHandler) GetRestaurants(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, restaurantsResponse)
 }
 
-// GetRestaurantMenu godoc
+// GetRestaurantMenuPosition godoc
 // @Summary Get restaurant menu by restaurant id and position id
 // @Description Get menu position by restaurant id and position id
 // @ID get-restaurant-menu-position
