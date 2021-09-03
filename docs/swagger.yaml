@@ -83,7 +83,7 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.Error'
-      summary: Get restaurant menu position by restaurant id and position id
+      summary: Get restaurant menu by restaurant id
       tags:
       - Restaurant Actions
   /restaurants/{id}/menu/{position_id}:

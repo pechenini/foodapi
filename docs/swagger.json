@@ -35,7 +35,7 @@
                 "tags": [
                     "Restaurant Actions"
                 ],
-                "summary": "Get restaurant menu position by restaurant id and position id",
+                "summary": "Get restaurant menu by restaurant id",
                 "operationId": "get-restaurant-menu",
                 "parameters": [
                     {
