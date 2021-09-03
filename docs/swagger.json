@@ -67,6 +67,9 @@
         "model.Menu": {
             "type": "object",
             "properties": {
+                "image": {
+                    "type": "string"
+                },
                 "ingredients": {
                     "type": "array",
                     "items": {
@@ -119,6 +122,9 @@
             "properties": {
                 "id": {
                     "type": "integer"
+                },
+                "image": {
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"

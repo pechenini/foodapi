@@ -9,6 +9,7 @@ type RestaurantCollectionResponse struct {
 type RestaurantResponse struct {
 	Id int `json:"id"`
 	Name string `json:"name"`
+	Image string `json:"image"`
 }
 
 type MenuResponse struct {

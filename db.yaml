@@ -1,36 +1,88 @@
 restaurants:
   - name: "Pizza Club"
     id: 1
+    image: "https://play-lh.googleusercontent.com/qMewibe3u5Wvq3fBf3Ca3_QItjHCOKeGrOAzVXWxqzgRpMwxYlD5CA6M2M5L78SwNA"
     menu:
       - name: "Pizza Pepperoni with tomatoes"
         price: 4.99
         type: "pizza"
-        ingredients: ["Mozarella", "Peperoni", "Tomatoes", "BBQ sauce"]
+        image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/okean-1.jpg.webp"
+        ingredients: [ "Mozarella", "Peperoni", "Tomatoes", "BBQ sauce" ]
 
       - name: "Pizza Texas"
         price: 7.99
         type: "pizza"
-        ingredients: ["Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce"]
+        image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/4-mjasa-1.jpg.webp"
+        ingredients: [ "Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce" ]
 
       - name: "Pizza Hawaiian"
         price: 6.99
         type: "pizza"
-        ingredients: ["Chicken", "Pineapple", "Mozarella"]
+        image: "https://roll-club.kh.ua/wp-content/uploads/2021/04/rostbif-v-tunce-1.jpg.webp"
+        ingredients: [ "Chicken", "Pineapple", "Mozarella" ]
 
   - name: "Burger Club"
     id: 2
+    image: "https://eda.ua/images/506509-195-195-burger_club_harkov.jpg"
     menu:
       - name: "Original burger"
         price: 3.99
         type: "burger"
-        ingredients: ["Cheese", "Caramelized onions", "Tomatoes", "Original sauce"]
+        image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/49e75c35-6fff-4a0f-8d6a-959cf4721c74_Medium_.jpg"
+        ingredients: [ "Cheese", "Caramelized onions", "Tomatoes", "Original sauce" ]
 
       - name: "Crispy Chicken burger"
         price: 4.95
         type: "burger"
-        ingredients: ["Chicken", "Tomatoes", "Mushrooms", "Onion", "BBQ sauce"]
+        image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/93bce037-709e-41a0-9beb-ab3670663b40_Medium_.jpg"
+        ingredients: [ "Chicken", "Tomatoes", "Mushrooms", "Onion", "BBQ sauce" ]
 
       - name: "Bacon Cheese Burger"
         price: 6.90
         type: "burger"
-        ingredients: ["Cheese cheddar", "Bacon", "Original sauce", "Onion rings"]
+        image: "https://316024.selcdn.ru/wiget/4d4c871a-107f-11e7-80df-d8d38565926f/ba3a1ca2-2ec6-4cf4-a843-f7f0fc0f175a_Medium_.jpg"
+        ingredients: [ "Cheese cheddar", "Bacon", "Original sauce", "Onion rings" ]
+
+  - name: "Roll-Club"
+    id: 3
+    image: "https://play-lh.googleusercontent.com/qMewibe3u5Wvq3fBf3Ca3_QItjHCOKeGrOAzVXWxqzgRpMwxYlD5CA6M2M5L78SwNA"
+    menu:
+      - name: "Pizza Ocean"
+        price: 4.99
+        type: "pizza"
+        image: "https://roll-club.kh.ua/wp-content/uploads/2019/03/kapricheza.jpg.webp"
+        ingredients: [ "Mozarella", "Peperoni", "Tomatoes", "BBQ sauce" ]
+
+      - name: "Pizza Florida"
+        price: 7.99
+        type: "pizza"
+        image: "https://roll-club.kh.ua/wp-content/uploads/2015/09/4-syra.jpg.webp"
+        ingredients: [ "Corn", "Onion", "Mushrooms", "Bavarian sausages", "Mozarella", "BBQ sauce" ]
+
+      - name: "Pizza Italiano"
+        price: 6.99
+        type: "pizza"
+        image: "https://roll-club.kh.ua/wp-content/uploads/2014/08/ukrainskaja.jpg.webp"
+        ingredients: [ "Chicken", "Pineapple", "Mozarella" ]
+
+  - name: "Sushi Space"
+    id: 4
+    image: "https://image.freepik.com/free-vector/sushi-restaurant-logo_8169-12.jpg"
+    menu:
+      - name: "Philadelphia with salmon"
+        price: 4.99
+        type: "sushi"
+        image: "https://ninjasushi.com.ua/img/452.png"
+        ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese" ]
+
+      - name: "Unagi Philadelphia"
+        price: 7.99
+        type: "sushi"
+        image: "https://ninjasushi.com.ua/img/102-600x600.png"
+        ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese", "Unagi sauce" ]
+
+      - name: "Himawari"
+        price: 6.99
+        type: "sushi"
+        image: "https://roll-club.kh.ua/wp-content/uploads/2014/08/ukrainskaja.jpg.webp"
+        ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese", "Unagi sauce", "Japanese tamago" ]
