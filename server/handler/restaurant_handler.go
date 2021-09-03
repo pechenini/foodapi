@@ -30,6 +30,7 @@ func (handler *RestaurantHandler) GetRestaurants(ctx *gin.Context) {
 		restaurantsResponse.Restaurants = append(restaurantsResponse.Restaurants, response.RestaurantResponse{
 			Id:   restaurant.ID,
 			Name: restaurant.Name,
+			Image: restaurant.Image,
 		})
 	}
 	ctx.JSON(http.StatusOK, restaurantsResponse)
