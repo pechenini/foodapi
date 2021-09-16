@@ -28,10 +28,10 @@ func (handler *SupplierHandler) GetSuppliers(ctx *gin.Context) {
 	var suppliersResponse response.SupplierCollectionResponse
 	for _, supplier := range handler.db.Suppliers {
 		suppliersResponse.Suppliers = append(suppliersResponse.Suppliers, response.SupplierResponse{
-			Id:    supplier.ID,
-			Name:  supplier.Name,
-			Type: supplier.Type,
-			Image: supplier.Image,
+			Id:           supplier.ID,
+			Name:         supplier.Name,
+			Type:         supplier.Type,
+			Image:        supplier.Image,
 			WorkingHours: supplier.WorkingHours,
 		})
 	}

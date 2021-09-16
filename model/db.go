@@ -5,12 +5,12 @@ type DB struct {
 }
 
 type Suppliers struct {
-	Name  string `yaml:"name" json:"name"`
-	Type string `yaml:"type" json:"type"`
+	Name         string       `yaml:"name" json:"name"`
+	Type         string       `yaml:"type" json:"type"`
 	WorkingHours WorkingHours `yaml:"working_hours" json:"workingHours"`
-	ID    int    `yaml:"id" json:"id"`
-	Image string `yaml:"image" json:"image"`
-	Menu  []Menu `yaml:"menu" json:"menu"`
+	ID           int          `yaml:"id" json:"id"`
+	Image        string       `yaml:"image" json:"image"`
+	Menu         []Menu       `yaml:"menu" json:"menu"`
 }
 
 type Menu struct {
