@@ -8,46 +8,48 @@ import (
 	"strconv"
 )
 
-type RestaurantHandler struct {
+type SupplierHandler struct {
 	db *model.DB
 }
 
-func NewRestaurantHandler(db *model.DB) *RestaurantHandler {
-	return &RestaurantHandler{db: db}
+func NewSupplierHandler(db *model.DB) *SupplierHandler {
+	return &SupplierHandler{db: db}
 }
 
-// GetRestaurants godoc
-// @Summary Get restaurants
-// @Description Get restaurants
-// @ID get-restaurants
-// @Tags Restaurants Actions
+// GetSuppliers godoc
+// @Summary Get suppliers
+// @Description Get suppliers
+// @ID get-suppliers
+// @Tags Suppliers Actions
 // @Produce json
-// @Success 200 {object} response.RestaurantCollectionResponse
-// @Router /restaurants [get]
-func (handler *RestaurantHandler) GetRestaurants(ctx *gin.Context) {
-	var restaurantsResponse response.RestaurantCollectionResponse
-	for _, restaurant := range handler.db.Restaurants {
-		restaurantsResponse.Restaurants = append(restaurantsResponse.Restaurants, response.RestaurantResponse{
-			Id:    restaurant.ID,
-			Name:  restaurant.Name,
-			Image: restaurant.Image,
+// @Success 200 {object} response.SupplierCollectionResponse
+// @Router /suppliers [get]
+func (handler *SupplierHandler) GetSuppliers(ctx *gin.Context) {
+	var suppliersResponse response.SupplierCollectionResponse
+	for _, supplier := range handler.db.Suppliers {
+		suppliersResponse.Suppliers = append(suppliersResponse.Suppliers, response.SupplierResponse{
+			Id:    supplier.ID,
+			Name:  supplier.Name,
+			Type: supplier.Type,
+			Image: supplier.Image,
+			WorkingHours: supplier.WorkingHours,
 		})
 	}
-	ctx.JSON(http.StatusOK, restaurantsResponse)
+	ctx.JSON(http.StatusOK, suppliersResponse)
 }
 
-// GetRestaurantMenuPosition godoc
-// @Summary Get restaurant menu by restaurant id and position id
-// @Description Get menu position by restaurant id and position id
-// @ID get-restaurant-menu-position
-// @Tags Restaurant Actions
+// GetSupplierMenuPosition godoc
+// @Summary Get supplier menu by supplier id and position id
+// @Description Get menu position by supplier id and position id
+// @ID get-supplier-menu-position
+// @Tags Supplier Actions
 // @Produce json
-// @Param id path int true "Restaurant ID"
-// @Param position_id path int true "Restaurant menu position ID"
+// @Param id path int true "Supplier ID"
+// @Param position_id path int true "Supplier menu position ID"
 // @Success 200 {object} model.Menu
 // @Failure 400 {object} response.Error
-// @Router /restaurants/{id}/menu/{position_id} [get]
-func (handler *RestaurantHandler) GetRestaurantMenuPosition(ctx *gin.Context) {
+// @Router /suppliers/{id}/menu/{position_id} [get]
+func (handler *SupplierHandler) GetSupplierMenuPosition(ctx *gin.Context) {
 	restId, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, response.Error{
@@ -64,11 +66,11 @@ func (handler *RestaurantHandler) GetRestaurantMenuPosition(ctx *gin.Context) {
 		return
 	}
 
-	for _, restaurant := range handler.db.Restaurants {
-		if restaurant.ID != restId {
+	for _, supplier := range handler.db.Suppliers {
+		if supplier.ID != restId {
 			continue
 		}
-		for _, menu := range restaurant.Menu {
+		for _, menu := range supplier.Menu {
 			if menu.ID == positionId {
 				ctx.JSON(http.StatusOK, menu)
 				return
@@ -77,25 +79,25 @@ func (handler *RestaurantHandler) GetRestaurantMenuPosition(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusBadRequest, response.Error{
-		Error: "restaurant or menu position was not found",
+		Error: "supplier or menu position was not found",
 	})
 	return
 }
 
-// GetRestaurantMenu godoc
-// @Summary Get restaurant menu by restaurant id
-// @Description Get menu by restaurant id
-// @ID get-restaurant-menu
-// @Tags Restaurant Actions
+// GetSupplierMenu godoc
+// @Summary Get supplier menu by supplier id
+// @Description Get menu by supplier id
+// @ID get-supplier-menu
+// @Tags Supplier Actions
 // @Produce json
-// @Param id path int true "Restaurant ID"
+// @Param id path int true "Supplier ID"
 // @Success 200 {object} response.MenuResponse
 // @Failure 400 {object} response.Error
-// @Router /restaurants/{id}/menu [get]
-func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
+// @Router /suppliers/{id}/menu [get]
+func (handler *SupplierHandler) GetSupplierMenu(ctx *gin.Context) {
 	var menuResponse response.MenuResponse
-	restIdString := ctx.Param("id")
-	restId, err := strconv.Atoi(restIdString)
+	supplierIdString := ctx.Param("id")
+	supplierId, err := strconv.Atoi(supplierIdString)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, response.Error{
 			Error: "wrong id provided",
@@ -103,15 +105,15 @@ func (handler *RestaurantHandler) GetRestaurantMenu(ctx *gin.Context) {
 		return
 	}
 
-	for _, restaurant := range handler.db.Restaurants {
-		if restaurant.ID == restId {
-			menuResponse.Menu = restaurant.Menu
+	for _, supplier := range handler.db.Suppliers {
+		if supplier.ID == supplierId {
+			menuResponse.Menu = supplier.Menu
 		}
 	}
 
 	if len(menuResponse.Menu) == 0 {
 		ctx.JSON(http.StatusBadRequest, response.Error{
-			Error: "restaurant was not found",
+			Error: "supplier was not found",
 		})
 		return
 	}
