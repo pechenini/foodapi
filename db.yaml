@@ -1,5 +1,9 @@
-restaurants:
+suppliers:
   - name: "Pizza Club"
+    type: "restaurant"
+    working_hours:
+        opening: "09:00"
+        closing: "20:00"
     id: 1
     image: "https://play-lh.googleusercontent.com/qMewibe3u5Wvq3fBf3Ca3_QItjHCOKeGrOAzVXWxqzgRpMwxYlD5CA6M2M5L78SwNA"
     menu:
@@ -25,6 +29,10 @@ restaurants:
         ingredients: [ "Chicken", "Pineapple", "Mozarella" ]
 
   - name: "Burger Club"
+    type: "restaurant"
+    working_hours:
+      opening: "10:00"
+      closing: "20:00"
     id: 2
     image: "https://eda.ua/images/506509-195-195-burger_club_harkov.jpg"
     menu:
@@ -50,6 +58,10 @@ restaurants:
         ingredients: [ "Cheese cheddar", "Bacon", "Original sauce", "Onion rings" ]
 
   - name: "Roll-Club"
+    type: "restaurant"
+    working_hours:
+      opening: "12:00"
+      closing: "18:00"
     id: 3
     image: "https://play-lh.googleusercontent.com/qMewibe3u5Wvq3fBf3Ca3_QItjHCOKeGrOAzVXWxqzgRpMwxYlD5CA6M2M5L78SwNA"
     menu:
@@ -75,6 +87,10 @@ restaurants:
         ingredients: [ "Chicken", "Pineapple", "Mozarella" ]
 
   - name: "Sushi Space"
+    type: "restaurant"
+    working_hours:
+      opening: "08:00"
+      closing: "20:00"
     id: 4
     image: "https://image.freepik.com/free-vector/sushi-restaurant-logo_8169-12.jpg"
     menu:
@@ -98,3 +114,61 @@ restaurants:
         type: "sushi"
         image: "https://roll-club.kh.ua/wp-content/uploads/2014/08/ukrainskaja.jpg.webp"
         ingredients: [ "Salmon", "Nori", "Rice", "Cucumber", "Cream cheese", "Unagi sauce", "Japanese tamago" ]
+
+  - name: "Target"
+    type: "supermarket"
+    working_hours:
+      opening: "00:00"
+      closing: "24:00"
+    id: 5
+    image: "https://1000logos.net/wp-content/uploads/2021/04/Target-logo.png"
+    menu:
+      - name: "Swedish Meatballs"
+        id: 13
+        price: 2.29
+        type: "frozen_meal"
+        image: "https://target.scene7.com/is/image/Target/GUEST_9066181d-e570-4eb1-b85d-1c8a547857fe?wid=1416&hei=1416&fmt=webp"
+        ingredients: [ "Pasta", "Meat", "Mayo" ]
+
+      - name: "Unwrapped Burrito Bowl"
+        id: 14
+        price: 3.19
+        type: "frozen_meal"
+        image: "https://target.scene7.com/is/image/Target/GUEST_7c640617-96cd-4236-96f0-38a995828861?wid=1416&hei=1416&fmt=webp"
+        ingredients: [ "Corn", "Onion", "Rice"]
+
+      - name: "Tortellini Bowls"
+        id: 15
+        price: 4.29
+        type: "frozen_meal"
+        image: "https://target.scene7.com/is/image/Target/GUEST_dd195641-5a34-4be1-9e14-c4632ee5942e?wid=1416&hei=1416&fmt=webp"
+        ingredients: [ "Garlic", "Basil", "Mozarella" ]
+
+  - name: "Wallmart"
+    type: "supermarket"
+    working_hours:
+      opening: "00:00"
+      closing: "24:00"
+    id: 6
+    image: "https://cdn.corporate.walmart.com/dims4/WMT/ea03f5e/2147483647/strip/true/crop/855x305+0+0/resize/1578x563!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F98%2F28%2F342ccbff478ab025592645fafcfc%2Fwalmart-logo.png"
+    menu:
+      - name: "Chicken Pot Pie"
+        id: 16
+        price: 2.78
+        type: "frozen_meal"
+        image: "https://i5.walmartimages.com/asr/64dc7c05-7d2c-4e29-854d-bada644f019e_1.f4de24032b1a5f48063903f488213f99.jpeg"
+        ingredients: [ "Chicken", "Flour", "Peas", "Carrots" ]
+
+      - name: "Beef & Bean Green Chili Burritos"
+        id: 17
+        price: 3.94
+        type: "appetizer"
+        image: "https://i5.walmartimages.com/asr/94fb73ff-59ce-48c2-acd3-42bbb3c52e67.56499b84aa3d79c7a9c51f29da5c3626.png"
+        ingredients: [ "Chili Pepper", "Onion", "Rice", "Mayo"]
+
+      - name: "Peanut Butter & Grape Jelly Sandwich"
+        id: 18
+        price: 7.18
+        type: "appetizer"
+        image: "https://i5.walmartimages.com/asr/f490a06c-4ea2-41f5-9151-a05449e93e43.64a407ec5ca286d97dd37cdede9f51fc.jpeg"
+        ingredients: [ "Flour", "Peanuts", "Grapes" ]
