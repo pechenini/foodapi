@@ -16,6 +16,13 @@ definitions:
       type:
         type: string
     type: object
+  model.WorkingHours:
+    properties:
+      closing:
+        type: string
+      opening:
+        type: string
+    type: object
   response.Error:
     properties:
       error:
@@ -28,14 +35,14 @@ definitions:
           $ref: '#/definitions/model.Menu'
         type: array
     type: object
-  response.RestaurantCollectionResponse:
+  response.SupplierCollectionResponse:
     properties:
       restaurants:
         items:
-          $ref: '#/definitions/response.RestaurantResponse'
+          $ref: '#/definitions/response.SupplierResponse'
         type: array
     type: object
-  response.RestaurantResponse:
+  response.SupplierResponse:
     properties:
       id:
         type: integer
@@ -43,31 +50,34 @@ definitions:
         type: string
       name:
         type: string
+      type:
+        type: string
+      workingHours:
+        $ref: '#/definitions/model.WorkingHours'
     type: object
 info:
   contact: {}
-  license: {}
 paths:
-  /restaurants:
+  /suppliers:
     get:
-      description: Get restaurants
-      operationId: get-restaurants
+      description: Get suppliers
+      operationId: get-suppliers
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/response.RestaurantCollectionResponse'
-      summary: Get restaurants
+            $ref: '#/definitions/response.SupplierCollectionResponse'
+      summary: Get suppliers
       tags:
-      - Restaurants Actions
-  /restaurants/{id}/menu:
+      - Suppliers Actions
+  /suppliers/{id}/menu:
     get:
-      description: Get menu by restaurant id
-      operationId: get-restaurant-menu
+      description: Get menu by supplier id
+      operationId: get-supplier-menu
       parameters:
-      - description: Restaurant ID
+      - description: Supplier ID
         in: path
         name: id
         required: true
@@ -83,20 +93,20 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.Error'
-      summary: Get restaurant menu by restaurant id
+      summary: Get supplier menu by supplier id
       tags:
-      - Restaurant Actions
-  /restaurants/{id}/menu/{position_id}:
+      - Supplier Actions
+  /suppliers/{id}/menu/{position_id}:
     get:
-      description: Get menu position by restaurant id and position id
-      operationId: get-restaurant-menu-position
+      description: Get menu position by supplier id and position id
+      operationId: get-supplier-menu-position
       parameters:
-      - description: Restaurant ID
+      - description: Supplier ID
         in: path
         name: id
         required: true
         type: integer
-      - description: Restaurant menu position ID
+      - description: Supplier menu position ID
         in: path
         name: position_id
         required: true
@@ -112,7 +122,7 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/response.Error'
-      summary: Get restaurant menu by restaurant id and position id
+      summary: Get supplier menu by supplier id and position id
       tags:
-      - Restaurant Actions
+      - Supplier Actions
 swagger: "2.0"

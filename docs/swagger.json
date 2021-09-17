@@ -1,46 +1,45 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {},
-        "license": {}
+        "contact": {}
     },
     "paths": {
-        "/restaurants": {
+        "/suppliers": {
             "get": {
-                "description": "Get restaurants",
+                "description": "Get suppliers",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "Restaurants Actions"
+                    "Suppliers Actions"
                 ],
-                "summary": "Get restaurants",
-                "operationId": "get-restaurants",
+                "summary": "Get suppliers",
+                "operationId": "get-suppliers",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/response.RestaurantCollectionResponse"
+                            "$ref": "#/definitions/response.SupplierCollectionResponse"
                         }
                     }
                 }
             }
         },
-        "/restaurants/{id}/menu": {
+        "/suppliers/{id}/menu": {
             "get": {
-                "description": "Get menu by restaurant id",
+                "description": "Get menu by supplier id",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "Restaurant Actions"
+                    "Supplier Actions"
                 ],
-                "summary": "Get restaurant menu by restaurant id",
-                "operationId": "get-restaurant-menu",
+                "summary": "Get supplier menu by supplier id",
+                "operationId": "get-supplier-menu",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "Restaurant ID",
+                        "description": "Supplier ID",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -62,28 +61,28 @@
                 }
             }
         },
-        "/restaurants/{id}/menu/{position_id}": {
+        "/suppliers/{id}/menu/{position_id}": {
             "get": {
-                "description": "Get menu position by restaurant id and position id",
+                "description": "Get menu position by supplier id and position id",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "Restaurant Actions"
+                    "Supplier Actions"
                 ],
-                "summary": "Get restaurant menu by restaurant id and position id",
-                "operationId": "get-restaurant-menu-position",
+                "summary": "Get supplier menu by supplier id and position id",
+                "operationId": "get-supplier-menu-position",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "Restaurant ID",
+                        "description": "Supplier ID",
                         "name": "id",
                         "in": "path",
                         "required": true
                     },
                     {
                         "type": "integer",
-                        "description": "Restaurant menu position ID",
+                        "description": "Supplier menu position ID",
                         "name": "position_id",
                         "in": "path",
                         "required": true
@@ -133,6 +132,17 @@
                 }
             }
         },
+        "model.WorkingHours": {
+            "type": "object",
+            "properties": {
+                "closing": {
+                    "type": "string"
+                },
+                "opening": {
+                    "type": "string"
+                }
+            }
+        },
         "response.Error": {
             "type": "object",
             "properties": {
@@ -152,18 +162,18 @@
                 }
             }
         },
-        "response.RestaurantCollectionResponse": {
+        "response.SupplierCollectionResponse": {
             "type": "object",
             "properties": {
                 "restaurants": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/response.RestaurantResponse"
+                        "$ref": "#/definitions/response.SupplierResponse"
                     }
                 }
             }
         },
-        "response.RestaurantResponse": {
+        "response.SupplierResponse": {
             "type": "object",
             "properties": {
                 "id": {
@@ -174,6 +184,12 @@
                 },
                 "name": {
                     "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "workingHours": {
+                    "$ref": "#/definitions/model.WorkingHours"
                 }
             }
         }
