@@ -25,10 +25,10 @@ func (regulator *PriceRegulator) Regulate(db *model.DB) {
 	ticker := time.NewTicker(regulator.timeout)
 	defer ticker.Stop()
 	for range ticker.C {
-		for i := 0; i < len(db.Restaurants); i++ {
-			for j := 0; j < len(db.Restaurants[i].Menu); j++ {
+		for i := 0; i < len(db.Suppliers); i++ {
+			for j := 0; j < len(db.Suppliers[i].Menu); j++ {
 				newPrice := 2 + rand.Float64()*(8-2)
-				db.Restaurants[i].Menu[j].Price = math.Round(newPrice*100) / 100
+				db.Suppliers[i].Menu[j].Price = math.Round(newPrice*100) / 100
 			}
 		}
 	}

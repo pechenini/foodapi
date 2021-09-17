@@ -1,14 +1,16 @@
 package model
 
 type DB struct {
-	Restaurants []Restaurants `yaml:"restaurants" json:"restaurants"`
+	Suppliers []Suppliers `yaml:"suppliers" json:"suppliers"`
 }
 
-type Restaurants struct {
-	Name  string `yaml:"name" json:"name"`
-	ID    int    `yaml:"id" json:"id"`
-	Image string `yaml:"image" json:"image"`
-	Menu  []Menu `yaml:"menu" json:"menu"`
+type Suppliers struct {
+	Name         string       `yaml:"name" json:"name"`
+	Type         string       `yaml:"type" json:"type"`
+	WorkingHours WorkingHours `yaml:"working_hours" json:"workingHours"`
+	ID           int          `yaml:"id" json:"id"`
+	Image        string       `yaml:"image" json:"image"`
+	Menu         []Menu       `yaml:"menu" json:"menu"`
 }
 
 type Menu struct {
@@ -18,4 +20,9 @@ type Menu struct {
 	Image       string   `yaml:"image" json:"image"`
 	Type        string   `yaml:"type" json:"type"`
 	Ingredients []string `yaml:"ingredients" json:"ingredients"`
+}
+
+type WorkingHours struct {
+	Opening string `yaml:"opening" json:"opening"`
+	Closing string `yaml:"closing" json:"closing"`
 }

@@ -43,12 +43,12 @@ func main() {
 	priceRegulator := regulation.NewPriceRegulator(1 * time.Minute)
 	go priceRegulator.Regulate(&db)
 
-	restHandler := handler.NewRestaurantHandler(&db)
+	supplierHandler := handler.NewSupplierHandler(&db)
 
-	r.GET("/restaurants", restHandler.GetRestaurants)
+	r.GET("/suppliers", supplierHandler.GetSuppliers)
 
-	r.GET("/restaurants/:id/menu", restHandler.GetRestaurantMenu)
-	r.GET("/restaurants/:id/menu/:position_id", restHandler.GetRestaurantMenuPosition)
+	r.GET("/suppliers/:id/menu", supplierHandler.GetSupplierMenu)
+	r.GET("/suppliers/:id/menu/:position_id", supplierHandler.GetSupplierMenuPosition)
 
 	url := ginSwagger.URL(os.Getenv("SWAGGER_ADDRESS")) // The url pointing to API definition
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
