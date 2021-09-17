@@ -37,7 +37,7 @@ definitions:
     type: object
   response.SupplierCollectionResponse:
     properties:
-      restaurants:
+      suppliers:
         items:
           $ref: '#/definitions/response.SupplierResponse'
         type: array

@@ -3,7 +3,7 @@ package response
 import "github.com/pechenini/foodapi/model"
 
 type SupplierCollectionResponse struct {
-	Suppliers []SupplierResponse `json:"restaurants"`
+	Suppliers []SupplierResponse `json:"suppliers"`
 }
 
 type SupplierResponse struct {

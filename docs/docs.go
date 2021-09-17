@@ -184,7 +184,7 @@ var doc = `{
         "response.SupplierCollectionResponse": {
             "type": "object",
             "properties": {
-                "restaurants": {
+                "suppliers": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/response.SupplierResponse"
